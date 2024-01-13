@@ -1,55 +1,14 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
-<style>
-
-body {
-  background-color: #191C24 !important;
-  font-family: "Raleway", sans-serif;
-}
-
-.container {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  top: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  padding: 0 15px;
-}
-
-.title {
-  color: white;
-  font-size: 40px;
-  font-weight: 600;
-  text-transform: uppercase;
-  padding-bottom: 0 !important;
-  margin: 0;
-}
-
-span {
-  color: #f82249;
-  text-transform: uppercase;
-  font-size: 40px;
-  font-weight: 600;
-  padding-bottom: 0 !important;
-}
-
-.e {
-  display: flex;
-  flex-direction: column;
-}
-
-</style>
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your MP3</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+  <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+  <title>Your MP3</title>
 </head>
 <body>
 
@@ -57,9 +16,16 @@ span {
 
     <form method="post" action="{% url 'descarga' %}">
       {% csrf_token %}
-      <h2 class="title">Descargar archivos MP3</h2><br><span>Descarga</span> Musica</h2>
-      <input type="text" name="url" required class="e">
-      <button type="submit" class="e">Descargar</button>
+
+      <h2 class="title">Descarga archivos MP3</h2><br><span>MP3 / Musica</span></h2>
+      <input type="text" name="url" placeholder="Ingresa la url" required >
+
+      {% if messages %}
+        {% for msg in messages %} <p>{{msg}}</p> {% endfor %}
+      {% endif %}
+
+      <button type="submit">Descargar</button>
+
     </form>
 
   </div>
