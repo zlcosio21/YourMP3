@@ -1,0 +1,81 @@
+body {
+    background-color: #191C24 !important;
+    font-family: "Raleway", sans-serif;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    bottom: 5%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    padding-bottom: 0 !important;
+    margin: 0;
+}
+
+span {
+    font-size: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #f82249;
+    padding-bottom: 0 !important;
+}
+
+input {
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    border: 2px solid hsl(0, 0%, 100%);
+    border-radius: 10px;
+    padding: 10px 25px;
+    background: transparent;
+    max-width: fit-content;
+    text-align: center;
+    margin-left: 155px;
+    margin-top: 2%;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+input:active {
+    box-shadow: 2px 2px 15px #ffffff inset;
+}
+
+input::placeholder {
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+
+button {
+    width: 130px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 0, 0);
+    border: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-left: 205.5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+p {
+    color: rgb(255, 0, 0);
+    font-weight: 600;
+}
