@@ -1,5 +1,6 @@
 from django.http import FileResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
 from pytube import YouTube
 import os
 
@@ -7,6 +8,13 @@ import os
 def descarga(request):
     if request.method == "POST":
         url = request.POST.get("url")
+
+        try:
+            video_url = YouTube(url)
+            audio = video_url.streams.filter(only_audio=True).first()
+        except:
+            messages.error(request, "La url es incorrecta, por favor ingrese una nuevamente")
+            return redirect("descarga")
 
         video_url = YouTube(url)
 
