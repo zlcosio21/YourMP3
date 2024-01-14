@@ -79,3 +79,15 @@ p {
     color: rgb(255, 0, 0);
     font-weight: 600;
 }
+
+@media (max-width: 768px) {
+
+    input {
+        margin: 2% auto;
+    }
+
+    button {
+        margin: 20px auto;
+    }
+
+}
